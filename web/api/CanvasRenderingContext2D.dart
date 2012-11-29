@@ -43,7 +43,7 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   num globalAlpha;
 
   /**
-   * With [globalAplpha] applied this sets how shapes and images are drawn onto 
+   * With globalAplpha applied this sets how shapes and images are drawn onto 
    * the existing bitmap. 
    * 
    * Possible values:
@@ -64,39 +64,90 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   /// @domName CanvasRenderingContext2D.globalCompositeOperation; @docsEditable true
   String globalCompositeOperation;
 
+  /**
+   * Type of endings on the end of lines. 
+   * 
+   * Possible values: butt (default), round, square
+   */
   /// @domName CanvasRenderingContext2D.lineCap; @docsEditable true
   String lineCap;
 
+  /**
+   * Specifies where to start a dasharray on a line.
+   * 
+   * 
+   */
   /// @domName CanvasRenderingContext2D.lineDashOffset; @docsEditable true
   num lineDashOffset;
 
+  /**
+   * Defines the type of corners where two lines meet. 
+   * 
+   * Possible values: round, bevel, miter (default)
+   */
   /// @domName CanvasRenderingContext2D.lineJoin; @docsEditable true
   String lineJoin;
 
+  /**
+   * Width of lines. 
+   * 
+   * Default 1.0
+   */
   /// @domName CanvasRenderingContext2D.lineWidth; @docsEditable true
   num lineWidth;
 
+  /**
+   * Default 10.
+   */
   /// @domName CanvasRenderingContext2D.miterLimit; @docsEditable true
   num miterLimit;
 
+  /**
+   * Specifies the blurring effect. 
+   * 
+   * Default 0
+   */
   /// @domName CanvasRenderingContext2D.shadowBlur; @docsEditable true
   num shadowBlur;
 
+  /**
+   * Color of the shadow. Default fully-transparent black.
+   */
   /// @domName CanvasRenderingContext2D.shadowColor; @docsEditable true
   String shadowColor;
 
+  /**
+   * Horizontal distance the shadow will be offset. 
+   * 
+   * Default 0.
+   * 
+   */
   /// @domName CanvasRenderingContext2D.shadowOffsetX; @docsEditable true
   num shadowOffsetX;
 
+  /**
+   * Vertical distance the shadow will be offset. Default 0.
+   */
   /// @domName CanvasRenderingContext2D.shadowOffsetY; @docsEditable true
   num shadowOffsetY;
 
+  /**
+   * Color or style to use for the lines around shapes. 
+   * 
+   * Default #000 (black).
+   */
   /// @domName CanvasRenderingContext2D.strokeStyle; @docsEditable true
   dynamic strokeStyle;
 
+  /**
+   * Possible values: start (default), end, left, right or center.
+   */
   /// @domName CanvasRenderingContext2D.textAlign; @docsEditable true
   String textAlign;
 
+  /**
+   * Possible values: top, hanging, middle, alphabetic (default), ideographic, bottom
+   */
   /// @domName CanvasRenderingContext2D.textBaseline; @docsEditable true
   String textBaseline;
 
@@ -104,24 +155,72 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   //final num webkitBackingStorePixelRatio;
   num webkitBackingStorePixelRatio;
   
+  /**
+   * Image smoothing mode; if disabled, images will not be smoothed if scaled.
+   */
   /// @domName CanvasRenderingContext2D.webkitImageSmoothingEnabled; @docsEditable true
   bool webkitImageSmoothingEnabled;
 
+  /**
+   * An array which specifies the lengths of alternating dashes and gaps.
+   */
   /// @domName CanvasRenderingContext2D.webkitLineDash; @docsEditable true
   List webkitLineDash;
 
+  /**
+   * Specifies where to start a dasharray on a line. 
+   */
   /// @domName CanvasRenderingContext2D.webkitLineDashOffset; @docsEditable true
   num webkitLineDashOffset;
 
+  /**
+   * Adds an arc to the path.
+   * 
+   * Center is at (x, y) position with radius r starting at startAngle 
+   * and ending at endAngle going in the given direction by anticlockwise 
+   * (defaulting to clockwise).
+   * 
+   * x
+   * The x axis of the coordinate for the arc's center.
+   * 
+   * y
+   * The y axis of the coordinate for the arc's center.
+   * 
+   * radius
+   * The arc's radius
+   * 
+   * startAngle
+   * The starting point, measured from the x axis , from which it will be drawed expressed as radians.
+   * 
+   * endAngle
+   * The end arc's angle to which it will be drawed expressed as radians.
+   * 
+   * anticlockwise 
+   * When true draws the arc anticlockwise, otherwise in a clockwise direction.
+   */
   /// @domName CanvasRenderingContext2D.arc; @docsEditable true
   void arc(num x, num y, num radius, num startAngle, num endAngle, bool anticlockwise); //native;
 
+  /**
+   * Adds an arc with the given control points and radius, connected to the 
+   * previous point by a straight line.
+   * 
+   * 
+   */
   /// @domName CanvasRenderingContext2D.arcTo; @docsEditable true
   void arcTo(num x1, num y1, num x2, num y2, num radius); // native;
 
+  /**
+   * Starts a new path by resetting the list of sub-paths. 
+   * 
+   * Call this method when you want to create a new path.
+   */
   /// @domName CanvasRenderingContext2D.beginPath; @docsEditable true
   void beginPath(); // native;
 
+  /**
+   * 
+   */
   /// @domName CanvasRenderingContext2D.bezierCurveTo; @docsEditable true
   void bezierCurveTo(num cp1x, num cp1y, num cp2x, num cp2y, num x, num y); // native;
 
