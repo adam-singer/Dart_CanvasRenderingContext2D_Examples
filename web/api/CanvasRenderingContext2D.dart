@@ -224,18 +224,63 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   /// @domName CanvasRenderingContext2D.bezierCurveTo; @docsEditable true
   void bezierCurveTo(num cp1x, num cp1y, num cp2x, num cp2y, num x, num y); // native;
 
+  /**
+   * Clears the rectangle defined by it starting point at (x, y) and has a w width and a h height.
+   * 
+   * x
+   * The x axis of the coordinate for the rectangle starting point.
+   *
+   * y
+   * The y axis of the coordinate for the rectangle starting point.
+   *
+   * width
+   * The rectangle's width.
+   *
+   * height
+   * The rectangle's height.   
+   */
   /// @domName CanvasRenderingContext2D.clearRect; @docsEditable true
   void clearRect(num x, num y, num width, num height); // native;
-
+  
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.clearShadow; @docsEditable true
   void clearShadow(); // native;
 
+  /**
+   * Creates a clipping path from the current sub-paths. 
+   * 
+   * Everything drawn after clip() is called appears inside the clipping path only. 
+   */
   /// @domName CanvasRenderingContext2D.clip; @docsEditable true
   void clip(); // native;
 
+  /** 
+   * Tries to draw a straight line from the current point to the start. 
+   *
+   * If the shape has already been closed or has only one point, this function does nothing.
+   */
   /// @domName CanvasRenderingContext2D.closePath; @docsEditable true
   void closePath(); // native;
 
+  /**
+   * Creates a new, blank ImageData object with the specified dimensions. 
+   *
+   * All of the pixels in the new object are transparent black.
+   *
+   * width
+   * The width to give the new ImageData object.
+   *
+   * height
+   * The height to give the new ImageData object.
+   *
+   * imagedata
+   * An existing ImageData object from which to copy the width and height. The image itself is not copied.
+   * 
+   * Return value
+   * A new ImageData object with the specified width and height. The new object is filled with transparent black pixels.
+   */
   /// @domName CanvasRenderingContext2D.createImageData; @docsEditable true
   ImageData createImageData(imagedata_OR_sw, [num sh]) {
     if ((?imagedata_OR_sw && (imagedata_OR_sw is ImageData || imagedata_OR_sw == null)) &&
@@ -253,30 +298,95 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   @Creates('ImageData|=Object')
   _createImageData_2(num sw, sh); // native "createImageData";
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.createLinearGradient; @docsEditable true
   CanvasGradient createLinearGradient(num x0, num y0, num x1, num y1); // native;
 
+  /**
+   * 
+   * 
+   * image
+   * A DOM element to use as the source image for the pattern. This can be any element, although typically you'll use an Image or <canvas>.
+   * repetition
+   * ?
+   * Return value
+   * 
+   * A new DOM canvas pattern object for use in pattern-based operations.
+   */
   /// @domName CanvasRenderingContext2D.createPattern; @docsEditable true
   CanvasPattern createPattern(canvas_OR_image, String repetitionType); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.createRadialGradient; @docsEditable true
   CanvasGradient createRadialGradient(num x0, num y0, num r0, num x1, num y1, num r1); // native;
 
+  /**
+   * Draws the specified image. 
+   * 
+   * This method is available in multiple formats, providing a great deal of flexibility in its use.
+   * 
+   * image
+   * An element to draw into the context; the specification permits any image element (that is, <img>, <canvas>, and <video>). Some browsers, including Firefox, let you use any arbitrary element.
+   *
+   * dx
+   * The X coordinate in the destination canvas at which to place the top-left corner of the source image.
+   *
+   * dy
+   * The Y coordinate in the destination canvas at which to place the top-left corner of the source image.
+   *
+   * dw
+   * The width to draw the image in the destination canvas. This allows scaling of the drawn image. If not specified, the image is not scaled in width when drawn.
+   *
+   * dh
+   * The height to draw the image in the destination canvas. This allows scaling of the drawn image. If not specified, the image is not scaled in height when drawn.
+   *
+   * sx
+   * The X coordinate of the top left corner of the sub-rectangle of the source image to draw into the destination context.
+   *
+   * sy
+   * The Y coordinate of the top left corner of the sub-rectangle of the source image to draw into the destination context.
+   *
+   * sw
+   *
+   * The width of the sub-rectangle of the source image to draw into the destination context. If not specified, the entire rectangle from the coordinates specified by sx and sy to the bottom-right corner of the image is used. If you specify a negative value, the image is flipped horizontally when drawn.
+   *
+   * sh
+   * The height of the sub-rectangle of the source image to draw into the destination context. If you specify a negative value, the image is flipped vertically when drawn.
+   */
   /// @domName CanvasRenderingContext2D.drawImage; @docsEditable true
   void drawImage(canvas_OR_image_OR_video, num sx_OR_x, num sy_OR_y, [num sw_OR_width, num height_OR_sh, num dx, num dy, num dw, num dh]); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.drawImageFromRect; @docsEditable true
   void drawImageFromRect(ImageElement image, [num sx, num sy, num sw, num sh, num dx, num dy, num dw, num dh, String compositeOperation]); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.fill; @docsEditable true
   void fill(); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.fillRect; @docsEditable true
   void fillRect(num x, num y, num width, num height); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.fillText; @docsEditable true
   void fillText(String text, num x, num y, [num maxWidth]); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.getImageData; @docsEditable true
   ImageData getImageData(num sx, num sy, num sw, num sh) {
     return _convertNativeToDart_ImageData(_getImageData_1(sx, sy, sw, sh));
@@ -284,21 +394,39 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   @Creates('ImageData|=Object')
   _getImageData_1(sx, sy, sw, sh); // native "getImageData";
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.getLineDash; @docsEditable true
   List<num> getLineDash(); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.isPointInPath; @docsEditable true
   bool isPointInPath(num x, num y); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.lineTo; @docsEditable true
   void lineTo(num x, num y); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.measureText; @docsEditable true
   TextMetrics measureText(String text); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.moveTo; @docsEditable true
   void moveTo(num x, num y); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.putImageData; @docsEditable true
   void putImageData(ImageData imagedata, num dx, num dy, [num dirtyX, num dirtyY, num dirtyWidth, num dirtyHeight]) {
     if (!?dirtyX &&
@@ -317,66 +445,129 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   void _putImageData_1(imagedata, dx, dy); // native "putImageData";
   void _putImageData_2(imagedata, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight); // native "putImageData";
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.quadraticCurveTo; @docsEditable true
   void quadraticCurveTo(num cpx, num cpy, num x, num y); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.rect; @docsEditable true
   void rect(num x, num y, num width, num height); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.restore; @docsEditable true
   void restore(); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.rotate; @docsEditable true
   void rotate(num angle); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.save; @docsEditable true
   void save(); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.scale; @docsEditable true
   void scale(num sx, num sy); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setAlpha; @docsEditable true
   void setAlpha(num alpha); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setCompositeOperation; @docsEditable true
   void setCompositeOperation(String compositeOperation); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setLineCap; @docsEditable true
   void setLineCap(String cap); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setLineDash; @docsEditable true
   void setLineDash(List<num> dash); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setLineJoin; @docsEditable true
   void setLineJoin(String join); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setLineWidth; @docsEditable true
   void setLineWidth(num width); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setMiterLimit; @docsEditable true
   void setMiterLimit(num limit); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setShadow; @docsEditable true
   void setShadow(num width, num height, num blur, [c_OR_color_OR_grayLevel_OR_r, num alpha_OR_g_OR_m, num b_OR_y, num a_OR_k, num a]); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.setTransform; @docsEditable true
   void setTransform(num m11, num m12, num m21, num m22, num dx, num dy); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.stroke; @docsEditable true
   void stroke(); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.strokeRect; @docsEditable true
   void strokeRect(num x, num y, num width, num height, [num lineWidth]); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.strokeText; @docsEditable true
   void strokeText(String text, num x, num y, [num maxWidth]); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.transform; @docsEditable true
   void transform(num m11, num m12, num m21, num m22, num dx, num dy); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.translate; @docsEditable true
   void translate(num tx, num ty); // native;
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.webkitGetImageDataHD; @docsEditable true
   ImageData webkitGetImageDataHD(num sx, num sy, num sw, num sh) {
     return _convertNativeToDart_ImageData(_webkitGetImageDataHD_1(sx, sy, sw, sh));
@@ -384,6 +575,9 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   @Creates('ImageData|=Object')
   _webkitGetImageDataHD_1(sx, sy, sw, sh); // native "webkitGetImageDataHD";
 
+  /**
+   *
+   */
   /// @domName CanvasRenderingContext2D.webkitPutImageDataHD; @docsEditable true
   void webkitPutImageDataHD(ImageData imagedata, num dx, num dy, [num dirtyX, num dirtyY, num dirtyWidth, num dirtyHeight]) {
     if (!?dirtyX &&
