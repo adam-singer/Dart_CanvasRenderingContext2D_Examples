@@ -367,13 +367,25 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   void drawImageFromRect(ImageElement image, [num sx, num sy, num sw, num sh, num dx, num dy, num dw, num dh, String compositeOperation]); // native;
 
   /**
-   *
+   * Fills the subpaths with the current fill style.
    */
   /// @domName CanvasRenderingContext2D.fill; @docsEditable true
   void fill(); // native;
 
   /**
+   * Draws a filled rectangle at (x, y) position whose size is determined by width and height.
+   * 
+   * x
+   * The x axis of the coordinate for the rectangle starting point.
    *
+   * y
+   * The y axis of the coordinate for the rectangle starting point.
+   *
+   * width
+   * The rectangle's width.
+   *
+   * height
+   * The rectangle's height.   
    */
   /// @domName CanvasRenderingContext2D.fillRect; @docsEditable true
   void fillRect(num x, num y, num width, num height); // native;
@@ -385,7 +397,22 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   void fillText(String text, num x, num y, [num maxWidth]); // native;
 
   /**
+   * Returns an ImageData object representing the underlying pixel data for the area of the canvas denoted by the rectangle which starts at (sx, sy) and has a sw width and sh height.
    *
+   * sx
+   * The x axis of the coordinate for the rectangle startpoint from which the ImageData will be extracted.
+   *
+   * sy
+   * The x axis of the coordinate for the rectangle endpoint from which the ImageData will be extracted.
+   *
+   * sw
+   * The width of the rectangle from which the ImageData will be extracted.
+   *
+   * sh
+   * The height of the rectangle from which the ImageData will be extracted.
+   *
+   * Return value
+   * Returns an ImageData object containing the image data for the given rectangle of the canvas.   
    */
   /// @domName CanvasRenderingContext2D.getImageData; @docsEditable true
   ImageData getImageData(num sx, num sy, num sw, num sh) {
@@ -395,7 +422,10 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   _getImageData_1(sx, sy, sw, sh); // native "getImageData";
 
   /**
+   * Returns an dash list array containing an even number of non-negative numbers.
    *
+   * Return value
+   * Returns an dash list array containing an even number of non-negative numbers.   
    */
   /// @domName CanvasRenderingContext2D.getLineDash; @docsEditable true
   List<num> getLineDash(); // native;
