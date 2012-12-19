@@ -5,49 +5,64 @@
 library api;
 
 /**
- * The 2D rendering context for the drawing surface of a CanvasElement. 
- * 
- * To get this object. call [getContext()] on [CanvasElement] with the 
+ * The 2D rendering context for the drawing surface of a CanvasElement.
+ *
+ * To get this object. call [getContext()] on [CanvasElement] with the
  * argument '2d'. Alternatively, the getter on [CanvasElement] [context2d]
  * provides the same call as a getter.
- * 
+ *
  * Example:
- * 
+ *
  *     var canvas = new CanvasElement(width: 600, height: 600);
  *     var ctx = canvas.context2d;
  *     document.body.children.add(canvas);
- * 
+ *
  * See also:
  * * [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/DOM/CanvasRenderingContext2D) from MDN
  * * [CanvasRenderingContext2D](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#canvasrenderingcontext2d) from whatwg
  */
 class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*CanvasRenderingContext2D" {
 
-  /** 
-   * Color or style to use inside shapes. Default #000 (black). 
+  /**
+   * Color or style to use inside shapes. Default #000 (black).
    * [fillStyle] can be set from [CanvasGradient], [CanvasPattern]
    * or [String] [CSS color](http://www.w3.org/TR/CSS21/syndata.html#color-units).
+   *
+   * Example usage:
+   *
+   *     MERGE(fillStyle_example)
+   *
    */
   /// @domName CanvasRenderingContext2D.fillStyle; @docsEditable true
   dynamic fillStyle;
 
-  /** Default value 10px sans-serif. */
+  /**
+   * Default value 10px sans-serif.
+   *
+   * Example usage:
+   *
+   *     MERGE(font_example)
+   */
   /// @domName CanvasRenderingContext2D.font; @docsEditable true
   String font;
 
-  /** 
-   * Alpha value that is applied to shapes and images before they are 
-   * composited onto the canvas. Default 1.0 (opaque). 
+  /**
+   * Alpha value that is applied to shapes and images before they are
+   * composited onto the canvas. Default 1.0 (opaque).
+   *
+   * Example usage:
+   *
+   *     MERGE(globalAlpha_example)
    */
   /// @domName CanvasRenderingContext2D.globalAlpha; @docsEditable true
   num globalAlpha;
 
   /**
-   * With globalAplpha applied this sets how shapes and images are drawn onto 
-   * the existing bitmap. 
-   * 
+   * With globalAplpha applied this sets how shapes and images are drawn onto
+   * the existing bitmap.
+   *
    * Possible values:
-   * 
+   *
    * * source-atop
    * * source-in
    * * source-out
@@ -57,41 +72,54 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
    * * destination-out
    * * destination-over
    * * lighter
-   * * xor 
-   * 
-   * 
+   * * xor
+   *
+   * Example usage:
+   *
+   *     MERGE(globalCompositeOperation_example)
    */
   /// @domName CanvasRenderingContext2D.globalCompositeOperation; @docsEditable true
   String globalCompositeOperation;
 
   /**
-   * Type of endings on the end of lines. 
-   * 
+   * Type of endings on the end of lines.
+   *
    * Possible values: butt (default), round, square
+   *
+   * Example usage:
+   *
+   *     MERGE(lineCap_example)
    */
   /// @domName CanvasRenderingContext2D.lineCap; @docsEditable true
   String lineCap;
 
   /**
    * Specifies where to start a dasharray on a line.
-   * 
-   * 
+   *
    */
   /// @domName CanvasRenderingContext2D.lineDashOffset; @docsEditable true
   num lineDashOffset;
 
   /**
-   * Defines the type of corners where two lines meet. 
-   * 
+   * Defines the type of corners where two lines meet.
+   *
    * Possible values: round, bevel, miter (default)
+   *
+   * Example usage:
+   *
+   *     MERGE(lineJoin_example)
    */
   /// @domName CanvasRenderingContext2D.lineJoin; @docsEditable true
   String lineJoin;
 
   /**
-   * Width of lines. 
-   * 
+   * Width of lines.
+   *
    * Default 1.0
+   *
+   * Example usage:
+   *
+   *     MERGE(lineWidth_example)
    */
   /// @domName CanvasRenderingContext2D.lineWidth; @docsEditable true
   num lineWidth;
@@ -103,9 +131,13 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   num miterLimit;
 
   /**
-   * Specifies the blurring effect. 
-   * 
+   * Specifies the blurring effect.
+   *
    * Default 0
+   *
+   * Example usage:
+   *
+   *     MERGE(shadowBlur_example)
    */
   /// @domName CanvasRenderingContext2D.shadowBlur; @docsEditable true
   num shadowBlur;
@@ -117,10 +149,10 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   String shadowColor;
 
   /**
-   * Horizontal distance the shadow will be offset. 
-   * 
+   * Horizontal distance the shadow will be offset.
+   *
    * Default 0.
-   * 
+   *
    */
   /// @domName CanvasRenderingContext2D.shadowOffsetX; @docsEditable true
   num shadowOffsetX;
@@ -132,8 +164,8 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   num shadowOffsetY;
 
   /**
-   * Color or style to use for the lines around shapes. 
-   * 
+   * Color or style to use for the lines around shapes.
+   *
    * Default #000 (black).
    */
   /// @domName CanvasRenderingContext2D.strokeStyle; @docsEditable true
@@ -154,7 +186,7 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   /// @domName CanvasRenderingContext2D.webkitBackingStorePixelRatio; @docsEditable true
   //final num webkitBackingStorePixelRatio;
   num webkitBackingStorePixelRatio;
-  
+
   /**
    * Image smoothing mode; if disabled, images will not be smoothed if scaled.
    */
@@ -168,65 +200,65 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   List webkitLineDash;
 
   /**
-   * Specifies where to start a dasharray on a line. 
+   * Specifies where to start a dasharray on a line.
    */
   /// @domName CanvasRenderingContext2D.webkitLineDashOffset; @docsEditable true
   num webkitLineDashOffset;
 
   /**
    * Adds an arc to the path.
-   * 
-   * Center is at (x, y) position with radius r starting at startAngle 
-   * and ending at endAngle going in the given direction by anticlockwise 
+   *
+   * Center is at (x, y) position with radius r starting at startAngle
+   * and ending at endAngle going in the given direction by anticlockwise
    * (defaulting to clockwise).
-   * 
+   *
    * x
    * The x axis of the coordinate for the arc's center.
-   * 
+   *
    * y
    * The y axis of the coordinate for the arc's center.
-   * 
+   *
    * radius
    * The arc's radius
-   * 
+   *
    * startAngle
    * The starting point, measured from the x axis , from which it will be drawed expressed as radians.
-   * 
+   *
    * endAngle
    * The end arc's angle to which it will be drawed expressed as radians.
-   * 
-   * anticlockwise 
+   *
+   * anticlockwise
    * When true draws the arc anticlockwise, otherwise in a clockwise direction.
    */
   /// @domName CanvasRenderingContext2D.arc; @docsEditable true
   void arc(num x, num y, num radius, num startAngle, num endAngle, bool anticlockwise); //native;
 
   /**
-   * Adds an arc with the given control points and radius, connected to the 
+   * Adds an arc with the given control points and radius, connected to the
    * previous point by a straight line.
-   * 
-   * 
+   *
+   *
    */
   /// @domName CanvasRenderingContext2D.arcTo; @docsEditable true
   void arcTo(num x1, num y1, num x2, num y2, num radius); // native;
 
   /**
-   * Starts a new path by resetting the list of sub-paths. 
-   * 
+   * Starts a new path by resetting the list of sub-paths.
+   *
    * Call this method when you want to create a new path.
    */
   /// @domName CanvasRenderingContext2D.beginPath; @docsEditable true
   void beginPath(); // native;
 
   /**
-   * 
+   *
    */
   /// @domName CanvasRenderingContext2D.bezierCurveTo; @docsEditable true
   void bezierCurveTo(num cp1x, num cp1y, num cp2x, num cp2y, num x, num y); // native;
 
   /**
    * Clears the rectangle defined by it starting point at (x, y) and has a w width and a h height.
-   * 
+   *
    * x
    * The x axis of the coordinate for the rectangle starting point.
    *
@@ -237,11 +269,11 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
    * The rectangle's width.
    *
    * height
-   * The rectangle's height.   
+   * The rectangle's height.
    */
   /// @domName CanvasRenderingContext2D.clearRect; @docsEditable true
   void clearRect(num x, num y, num width, num height); // native;
-  
+
   /**
    *
    */
@@ -249,15 +281,15 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   void clearShadow(); // native;
 
   /**
-   * Creates a clipping path from the current sub-paths. 
-   * 
-   * Everything drawn after clip() is called appears inside the clipping path only. 
+   * Creates a clipping path from the current sub-paths.
+   *
+   * Everything drawn after clip() is called appears inside the clipping path only.
    */
   /// @domName CanvasRenderingContext2D.clip; @docsEditable true
   void clip(); // native;
 
-  /** 
-   * Tries to draw a straight line from the current point to the start. 
+  /**
+   * Tries to draw a straight line from the current point to the start.
    *
    * If the shape has already been closed or has only one point, this function does nothing.
    */
@@ -265,7 +297,7 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   void closePath(); // native;
 
   /**
-   * Creates a new, blank ImageData object with the specified dimensions. 
+   * Creates a new, blank ImageData object with the specified dimensions.
    *
    * All of the pixels in the new object are transparent black.
    *
@@ -277,7 +309,7 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
    *
    * imagedata
    * An existing ImageData object from which to copy the width and height. The image itself is not copied.
-   * 
+   *
    * Return value
    * A new ImageData object with the specified width and height. The new object is filled with transparent black pixels.
    */
@@ -305,14 +337,14 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   CanvasGradient createLinearGradient(num x0, num y0, num x1, num y1); // native;
 
   /**
-   * 
-   * 
+   *
+   *
    * image
    * A DOM element to use as the source image for the pattern. This can be any element, although typically you'll use an Image or <canvas>.
    * repetition
    * ?
    * Return value
-   * 
+   *
    * A new DOM canvas pattern object for use in pattern-based operations.
    */
   /// @domName CanvasRenderingContext2D.createPattern; @docsEditable true
@@ -325,10 +357,10 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
   CanvasGradient createRadialGradient(num x0, num y0, num r0, num x1, num y1, num r1); // native;
 
   /**
-   * Draws the specified image. 
-   * 
+   * Draws the specified image.
+   *
    * This method is available in multiple formats, providing a great deal of flexibility in its use.
-   * 
+   *
    * image
    * An element to draw into the context; the specification permits any image element (that is, <img>, <canvas>, and <video>). Some browsers, including Firefox, let you use any arbitrary element.
    *
@@ -374,7 +406,7 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
 
   /**
    * Draws a filled rectangle at (x, y) position whose size is determined by width and height.
-   * 
+   *
    * x
    * The x axis of the coordinate for the rectangle starting point.
    *
@@ -385,7 +417,7 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
    * The rectangle's width.
    *
    * height
-   * The rectangle's height.   
+   * The rectangle's height.
    */
   /// @domName CanvasRenderingContext2D.fillRect; @docsEditable true
   void fillRect(num x, num y, num width, num height); // native;
@@ -412,7 +444,7 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
    * The height of the rectangle from which the ImageData will be extracted.
    *
    * Return value
-   * Returns an ImageData object containing the image data for the given rectangle of the canvas.   
+   * Returns an ImageData object containing the image data for the given rectangle of the canvas.
    */
   /// @domName CanvasRenderingContext2D.getImageData; @docsEditable true
   ImageData getImageData(num sx, num sy, num sw, num sh) {
@@ -425,7 +457,7 @@ class CanvasRenderingContext2D { // extends CanvasRenderingContext native "*Canv
    * Returns an dash list array containing an even number of non-negative numbers.
    *
    * Return value
-   * Returns an dash list array containing an even number of non-negative numbers.   
+   * Returns an dash list array containing an even number of non-negative numbers.
    */
   /// @domName CanvasRenderingContext2D.getLineDash; @docsEditable true
   List<num> getLineDash(); // native;

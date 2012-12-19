@@ -1,12 +1,12 @@
 import 'dart:html';
 
 void main() {
+  // BEGIN(fillStyle_example)
   var canvas = new CanvasElement(width: 600, height: 400);
-  var context = canvas.context2d;
-  
-  context.font = '40pt Calibri';
-  context.fillStyle = 'blue';
-  context.fillText('Hello World!', 150, 100);
-  
+  canvas.context2d
+  ..font = '40pt Calibri'
+  ..fillStyle = 'blue'
+  ..fillText('Hello World!', 150, 100);
+  // END(fillStyle_example)
   document.body.children.add(canvas);
 }

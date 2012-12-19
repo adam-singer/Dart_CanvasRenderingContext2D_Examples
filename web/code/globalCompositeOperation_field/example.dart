@@ -6,12 +6,31 @@ void main() {
   var canvas = new CanvasElement(width: 600, height: 400);
   var context = canvas.context2d;
   document.body.children.add(canvas);
-  
+
   var tempCanvas = new CanvasElement(width: 600, height: 400);
   var tempContext = canvas.context2d;
-  tempCanvas.style.display = "none";
+  // BEGIN(globalCompositeOperation_example)
+  canvas.context2d
+  ..save()
+  // clear temp context
+  ..clearRect(0, 0, canvas.width, canvas.height)
+  // draw rectangle (destination)
+  ..beginPath()
+  ..rect(0, 0, 50, 50)
+  ..fillStyle = 'blue'
+  ..fill()
+  // set global composite
+  ..globalCompositeOperation = "source-atop"
+  // draw circle (source)
+  ..beginPath()
+  ..arc(25, 25, 20, 0, 2 * PI, false)
+  ..fillStyle = 'green'
+  ..fill()
+  ..restore();
+  // END(globalCompositeOperation_example)
+
   document.body.children.add(tempCanvas);
-  
+
   var squareWidth = 55;
   var circleRadius = 35;
   var shapeOffset = 50;
@@ -39,7 +58,7 @@ void main() {
     var thisOperation = arr[n];
 
     tempContext.save();
-    
+
     // clear temp context
     tempContext.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -65,7 +84,7 @@ void main() {
     tempContext.fillStyle = 'black';
     tempContext.fillText(thisOperation, 0, squareWidth + 45);
     tempContext.restore();
-    
+
     // translate visible context so operation is drawn in the right place
 //    if(n > 0) {
 //      if(n % 4 == 0) {
@@ -75,12 +94,12 @@ void main() {
 //        context.translate(operationOffset, 0);
 //      }
 //    }
-    
+
     //context.translate(operationOffset, 0);
 
     // copy drawing from tempCanvas onto visible canvas
     context.drawImage(tempCanvas, 0, 0);
   }
-  
-  
+
+
 }
